@@ -11,6 +11,42 @@
         />
         <!-- <link rel="stylesheet" href="./mini-style.css" /> -->
         <title>Bootstrap PlayGround</title>
+        <!-- <style>
+            .nav-link {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                color: black !important;
+                padding: 10px 15px;
+                transition: background-color 0.2s;
+                background-color: rgb(216, 216, 216);
+            }
+            .nav-link:hover {
+                background-color: #c0e0ff;
+                color: black;
+            }
+            .nav-item {
+                color: black;
+            }
+            .nav-link img {
+                transition: transform 0.2s;
+            }
+            .nav-link:not(.collapsed) {
+                background-color: rgb(192, 192, 192);
+            }
+            .nav-link:not(.collapsed) img {
+                transform: rotate(90deg);
+            }
+
+            .submenu {
+                transition: background-color 0.12s;
+                cursor: pointer;
+            }
+
+            .submenu:hover {
+                background-color: rgb(216, 216, 216);
+            }
+        </style> -->
     </head>
     <body class="bg-dark text-light">
         <h1>Aloha</h1>
@@ -307,7 +343,6 @@
 
         <div class="container mt-5">
             <div class="accordion br">
-
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button
@@ -408,6 +443,83 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="m-5">
+            <nav class="sidebar bg-light border-end">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            data-bs-toggle="collapse"
+                            href="#menu1"
+                            role="button"
+                            aria-expanded="false"
+                            aria-controls="menu1"
+                        >
+                            <img
+                                src="./assets/arrow.svg"
+                                alt="arrow"
+                                width="14"
+                                height="14"
+                            />
+                            Menu 1
+                        </a>
+                        <div class="collapse" id="menu1">
+                            <ul class="nav flex-column ms-3 m-2">
+                                <li
+                                    class="nav-item p-1 ps-2 submenu rounded-1 mb-1"
+                                >
+                                    Sub Menu 1
+                                </li>
+                                <li class="nav-item p-1 ps-2 submenu rounded-1">
+                                    Sub Menu 2
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            data-bs-toggle="collapse"
+                            href="#menu2"
+                            role="button"
+                            aria-expanded="false"
+                            aria-controls="menu2"
+                        >
+                            <img
+                                src="./assets/arrow.svg"
+                                alt="arrow"
+                                width="14"
+                                height="14"
+                            />
+                            Menu 2
+                        </a>
+                        <div class="collapse" id="menu2">
+                            <ul class="nav flex-column ms-3 m-2">
+                                <li
+                                    class="nav-item p-1 ps-2 submenu rounded-1 mb-1"
+                                >
+                                    Sub Menu 1
+                                </li>
+                                <li class="nav-item p-1 ps-2 submenu rounded-1">
+                                    Sub Menu 2
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <span class="badge bg-light text-dark p-2 m-5"
+            >doc-beginner
+            <span class="badge bg-secondary text-dark">4</span></span
+        >
+
+        <div class="d-inline-block">
+            <span class="h4">Example heading</span>
+            <span class="badge bg-secondary">100</span>
         </div>
 
         <script
