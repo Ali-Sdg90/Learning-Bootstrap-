@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bootstrap Toast Example</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div class="container mt-5">
+            <button type="button" class="btn btn-danger" id="liveToastBtnError">
+                Show Error Toast
+            </button>
+            <button type="button" class="btn btn-info" id="liveToastBtnInfo">
+                Show Info Toast
+            </button>
+            <button
+                type="button"
+                class="btn btn-success"
+                id="liveToastBtnSuccess"
+            >
+                Show Success Toast
+            </button>
+
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                <!-- Error Toast -->
+                <div
+                    id="liveToastError"
+                    class="toast"
+                    role="alert"
+                    aria-live="assertive"
+                    aria-atomic="true"
+                >
+                    <div class="toast-header bg-danger text-white">
+                        <strong class="me-auto">Error</strong>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="toast"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="toast-body">
+                        Hello, This is an error toast message.
+                    </div>
+                </div>
+
+                <!-- Info Toast -->
+                <div
+                    id="liveToastInfo"
+                    class="toast"
+                    role="alert"
+                    aria-live="assertive"
+                    aria-atomic="true"
+                >
+                    <div class="toast-header bg-info text-white">
+                        <strong class="me-auto">Info</strong>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="toast"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="toast-body">
+                        Hello, This is an info toast message.
+                    </div>
+                </div>
+
+                <!-- Success Toast -->
+                <div
+                    id="liveToastSuccess"
+                    class="toast"
+                    role="alert"
+                    aria-live="assertive"
+                    aria-atomic="true"
+                >
+                    <div class="toast-header bg-success text-white">
+                        <strong class="me-auto">Success</strong>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="toast"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="toast-body">
+                        Hello, This is a success toast message.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+        <script>
+            const toastTriggerError =
+                document.getElementById("liveToastBtnError");
+            const toastLiveError = document.getElementById("liveToastError");
+
+            const toastTriggerInfo =
+                document.getElementById("liveToastBtnInfo");
+            const toastLiveInfo = document.getElementById("liveToastInfo");
+
+            const toastTriggerSuccess = document.getElementById(
+                "liveToastBtnSuccess"
+            );
+            const toastLiveSuccess =
+                document.getElementById("liveToastSuccess");
+
+            if (toastTriggerError) {
+                toastTriggerError.addEventListener("click", () => {
+                    const toast = new bootstrap.Toast(toastLiveError);
+                    toast.show();
+                });
+            }
+
+            if (toastTriggerInfo) {
+                toastTriggerInfo.addEventListener("click", () => {
+                    const toast = new bootstrap.Toast(toastLiveInfo);
+                    toast.show();
+                });
+            }
+
+            if (toastTriggerSuccess) {
+                toastTriggerSuccess.addEventListener("click", () => {
+                    const toast = new bootstrap.Toast(toastLiveSuccess);
+                    toast.show();
+                });
+            }
+        </script>
+    </body>
+</html>
